@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
+    id 'kotlin'
+    id "org.jetbrains.kotlin.kapt"
 }
 
 dependencies {
@@ -9,10 +9,9 @@ dependencies {
 
     // Kotlin & Android Deps
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.7.0'
 
     // Extra Deps
     def room_version = "2.3.0"
-    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
 }
