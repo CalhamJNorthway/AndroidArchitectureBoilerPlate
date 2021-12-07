@@ -5,7 +5,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.domain.models.TodoItem
-import com.sun.xml.internal.bind.v2.TODO
 
 @Dao
 interface TodoItemDoa {
@@ -14,7 +13,7 @@ interface TodoItemDoa {
     fun getAll(): List<TodoItem>
 
     @Query("SELECT * FROM item where id IN (:todoIds)")
-    fun getItem(id: String): TODO
+    fun getItem(id: String): TodoItem
 
     @Insert
     fun addItem(item: TodoItem)

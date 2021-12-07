@@ -1,18 +1,18 @@
 plugins {
-    id 'java-library'
-    id 'kotlin'
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    id 'com.android.application'
+    id 'kotlin-android'
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Projects
     implementation project(':domain')
 
+    // Kotlin & Android Deps
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    // Extra Deps
     def room_version = "2.3.0"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }
